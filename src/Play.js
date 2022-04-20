@@ -4,7 +4,7 @@ class Play extends Phaser.Scene {
   }
 
   preload() {
-    // load images/tile sprites
+    // load images/tiles
     this.load.image("rocket1", "./assets/rocket1.png");
     this.load.image("rocket2", "./assets/rocket2.png");
     this.load.image("spaceship", "./assets/spaceship.png");
@@ -23,7 +23,7 @@ class Play extends Phaser.Scene {
   }
 
   create() {
-    // define keys
+    //key definition
     keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
     keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
     keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -33,7 +33,7 @@ class Play extends Phaser.Scene {
     keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 
-    // place tile sprite
+    // place tile sprites
     this.starfield0 = this.add
       .tileSprite(0, 0, 640, 480, "starfield0")
       .setOrigin(0, 0);
@@ -80,7 +80,7 @@ class Play extends Phaser.Scene {
       )
       .setOrigin(0, 0);
 
-    // add rocket (p1)
+    // add rocket (player 1)
     this.p1Rocket = new Rocket(
       this,
       game.config.width / 2,
@@ -91,6 +91,7 @@ class Play extends Phaser.Scene {
       keyRIGHT,
       keyUP
     ).setOrigin(0.5, 0);
+    // p2 rocket
     this.p2Rocket = new Rocket(
       this,
       game.config.width / 2,
